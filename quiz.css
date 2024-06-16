@@ -1,0 +1,59 @@
+body{
+display: flex;
+    justify-content: center;
+}
+.container {
+    background-color: #fff;
+    text-align: center;
+    width: 700px;
+    height: 700px;
+    border-radius: 2px; /* Apply border image to the container */
+    border-width: 4px; /* Set border width */
+    border-style: solid; /* Set border style */
+}
+.hello{
+    margin-top: 5%;
+    color: rgb(79, 136, 241);;
+}
+.image img{
+   margin-top: 25px;
+    width: 300px;
+    height: 150;
+}
+
+.inputform input {
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    border: solid #111 1px;
+    margin: 7px;
+}
+
+#btu {
+    width: 100px;
+    height: 35px;
+    background-color: rgb(30, 159, 239);
+    border-radius: 5px;
+    color: #fff;
+    border: 2px black;
+  }
+  .select1, .select2 {
+    display: flex;
+  }
+
+  .select1 h3, .select2 h3 {
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: rgb(242, 244, 244);
+    width: 300px;
+    height: 50px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Add cursor pointer for better UX */
+  }
+  a{
+    text-decoration: none;
+    color: #111;
+  }

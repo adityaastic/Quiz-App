@@ -1,0 +1,123 @@
+/* Set up flexbox for centering */
+body {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    margin: 0; 
+}
+
+/* Main container for the app */
+.app {
+    position: relative; /* Position relative for absolute positioning of the border */
+    width: 600px;
+    height: 520px;
+    text-align: center;
+}
+
+/* Border animation */
+.app::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -4px;
+    right: -3px;
+    bottom: -2px;
+    border: solid black 2px;
+    border-radius: 5px; /* Match the border radius of the app */
+    
+    z-index: -1;
+}
+
+
+/* Other styles remain unchanged */
+.apptest {
+    text-align: center;
+}
+
+.appno {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50%;
+    margin-left: 5%;
+}
+
+.score {
+    background-color: rgb(76, 179, 243); 
+    padding: 12px 12px;
+    border-radius: 4px; 
+}
+
+.appno h3 {
+    justify-content: center;
+    font-size: 25px;
+}
+
+#timer {
+    background-color: rgb(25, 136, 206); 
+    padding: 5px 20px;
+    border-radius: 30px;  
+    margin-right: 6%;
+    color: #fff;
+}
+
+#question {
+    border: rgb(76, 179, 243) solid 1px;
+    width: 90%;
+    margin: 5%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn {
+    margin: 2%;
+    width: 40%;
+    height: 50px;
+}
+
+.noto {
+    border-radius: 50%;
+    background-color: rgb(43, 91, 173);
+    height: 50px;
+    width: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 720px) {
+    .noto {
+        border-radius: 50%;
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+    }
+}
+
+/* Styling for the next question button */
+#nextquestion {
+    justify-content: center;
+    width: auto;
+    border-radius: 5px;
+    border-color:black;
+    height: 40px;
+    color: white;
+    background-color: rgb(76, 179, 243);
+    cursor: pointer;
+}

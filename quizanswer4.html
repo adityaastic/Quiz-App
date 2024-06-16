@@ -1,0 +1,46 @@
+<!--2nd page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quizanwer.css">
+    <title>Quiz App</title>
+</head>
+<body>
+    <!-- Main container for the quiz app -->
+    <div class="app">
+        <!-- Title of the quiz -->
+        <div class="apptest"><p>USER NAME</p></div>
+        <!-- Container for score and timer -->
+        <div class="appno">
+            <!-- Score display -->
+            <h3><span class="score">SCORE: 0</span></h3>
+            <!-- Timer display -->
+            <h3 id="timer">10</h3> <!-- Add a new element for the timer countdown -->
+        </div>
+        <!-- Container for quiz question and answers -->
+        <div class="quiz">
+            <!-- Question display -->
+            <h2 id="question">Question 1: What do you call a word that has the opposite meaning of another word ?</h2>
+            <!-- Container for answer options -->
+            <div class="answer-ques">
+                <!-- Answer buttons -->
+                <button class="btn" onclick="checkAnswer(this)">Synonym </button>
+                <button class="btn" onclick="checkAnswer(this)">Homonym</button><br>
+                <button class="btn" onclick="checkAnswer(this)">Antonym</button>
+                <button class="btn" onclick="checkAnswer(this)">Homophone</button>
+            </div>
+            <!-- Button to move to the next question -->
+            <button id="nextquestion" onclick="nextQuestion()">Next Question</button>
+        </div>
+    </div>
+    <!-- Progress display -->
+    <div class="noto">
+        <h3 id="progress">1/10</h3>
+    </div>    
+
+    <!-- Include JavaScript file -->
+    <script src="quizscript4.js"></script>
+</body>
+</html>

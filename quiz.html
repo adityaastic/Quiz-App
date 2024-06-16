@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="quiz.css">
+    <!-- Title of the document -->
+    <title>Quiz App</title>
+</head>
+<body>
+    <!-- Main container for the quiz -->
+    <div class="container">
+        <!-- Image section -->
+        <div class="image">
+           <!-- Quiz image with unique id -->
+           <img src="img/textbooklogo.png" alt="photo" id="quizImage">
+        </div>
+        <!-- Greeting section -->
+        <div class="hello">
+            <h1>Hello user!</h1>
+        </div>
+        <!-- Name entry prompt -->
+        <div class="Enter">
+            <p>Enter Your Name to Continue the Quiz app</p>
+        </div>
+        <!-- Form for name input -->
+        <div class="inputform">
+            <form id="form">
+                <!-- Input field for name -->
+                <input type="text" name="name" id="name" placeholder="ENTER YOUR NAME.">
+                <!-- Button to submit name -->
+                <button type="button" id="btu">ENTER</button>
+            </form>
+            <!-- Information about time limit -->
+            <div class="You">
+                <p>You have 10 seconds to answer each question</p>
+            </div>
+            <!-- Horizontal line -->
+            <hr>
+            <!-- Display entered name -->
+            <div class="namedisplay" id="namedisplay"></div>
+            <!-- Section for selecting quiz category -->
+            <div class="select3">
+                <!-- Heading for category selection -->
+                <h1>Select Category</h1>
+            </div>
+            <!-- First set of category options -->
+            <div class="select1">
+                <!-- Link to first category -->
+                <h3><a href="quizanswer.html"> Math </a></h3>
+                <!-- Link to second category -->
+                <h3><a href="quizanswer2.html">General Knowledge </a></h3>
+            </div>
+            <!-- Second set of category options -->
+            <div class="select2">
+                <!-- Link to third category -->
+                <h3><a href="quizanswer3.html"> Science</a></h3>
+                <!-- Link to fourth category -->
+                <h3><a href="quizanswer4.html">English</a></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling name input and category selection -->
+    <script>
+        // Event listener for name submission
+        document.getElementById('btu').addEventListener('click', function() {
+            // Get the entered name
+            const Name = document.querySelector('#name').value;
+            // Display the entered name
+            document.querySelector('#namedisplay').textContent = Name;
+            // Store the name in local storage
+            localStorage.setItem('name', Name);
+        });
+        
+        // Get all the h3 elements for category selection
+        const h3Elements = document.querySelectorAll('.select1 h3, .select2 h3');
+        // Loop through each h3 element and add click event listener
+        h3Elements.forEach(h3 => {
+            h3.addEventListener('click', function() {
+                // Get the URL of the selected category
+                const url = this.querySelector('a').getAttribute('href');
+                // Navigate to the selected category page
+                window.location.href = url;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quizresult.css">
+    <title>Quiz Result</title>
+</head>
+<body>
+    <!-- Container for the quiz result -->
+    <div class="filex">
+        <!-- Title of the quiz result -->
+        <div id="vvvvv">
+            <h3>Quiz Result:</h3>
+        </div>
+          <!-- Display full name -->
+          <div class="fullname">
+            <h3>Name : <span id="namedisplay"></span>!</h3>
+        </div>
+        <!-- Display total time taken -->
+        <div class="totalno">
+            <p>Total Time Taken: <span id="totalTime">0 seconds</span></p>
+        </div>
+        <!-- Display total questions -->
+        <div class="TotalQuestion">
+            <p>Total Questions: <span id="totalQuestions">0</span></p>
+        </div>
+        <!-- Display total attempted questions -->
+        <div class="attempt">
+            <p>Total Attempted: <span id="attemptedQuestions">0</span></p>
+        </div>
+        <!-- Display pass/fail status -->
+        <div class="pass-fail">
+            <p>Pass/Fail: <span id="passFail"></span></p>
+        </div>
+        <!-- Display number of correct answers -->
+        <div class="correct">
+            <p>Correct Answers: <span id="correctAnswers">0</span></p>
+        </div>
+        <!-- Display number of wrong answers -->
+        <div class="wrong">
+            <p>Wrong Answers: <span id="wrongAnswers">0</span></p>
+        </div>
+        <!-- Display percentage score -->
+        <div class="precentage">
+            <p>Percentage: <span id="percentage">0%</span></p>
+        </div>
+        <!-- Buttons for navigating to other pages -->
+        <div class="exam">
+            <!-- Button to navigate to the Home page -->
+            <button><a href="quiz.html">Home</a></button>
+            <!-- Button to navigate to the Exam page -->
+            <button><a href="quizanswer.html">Exam please</a></button>
+        </div>
+    </div>
+    <!-- Script to handle local storage and button click events -->
+    <script src="quizresult.js"></script> 
+    <script>
+        // Retrieve name from local storage and display it
+        const name = localStorage.getItem('name');
+        if (name) {
+            document.getElementById('namedisplay').textContent = name;
+        }
+        // Get all the buttons for navigation
+        const buttons = document.querySelectorAll('.exam button');
+        // Add click event listener to each button
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the URL from the button's link and navigate to it
+                const url = this.querySelector('a').getAttribute('href');
+                window.location.href = url;
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
